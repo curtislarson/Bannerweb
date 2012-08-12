@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Copyright (c) 2012 Curtis Larson (QuackWare)
+  All rights reserved. This program and the accompanying materials
+  are made available under the terms of the GNU Public License v3.0
+  which accompanies this distribution, and is available at
+  http://www.gnu.org/licenses/gpl.html
+-->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+
+   <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center" >
+
+        <TextView
+            android:id="@+id/userIdTextView"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="User ID: "
+            android:gravity="center" 
+            android:minWidth="75dip"/>
+
+        <EditText
+            android:id="@+id/userIdEditText"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            android:minWidth="200dip" >
+
+            <requestFocus />
+        </EditText>
+    </LinearLayout>
+
+<LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center" >
+        <TextView
+            android:id="@+id/PINTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="PIN: " 
+            android:gravity="center"
+            android:minWidth="75dip"/>
+
+        <EditText
+            android:id="@+id/PINeditText"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textPassword" 
+            android:minWidth="200dip"/>
+       </LinearLayout>
+
+    <Button
+        android:id="@+id/buttonRetrieveBalance"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Retrieve Balance" 
+        android:layout_gravity="center"/>
+    <TextView
+            android:id="@+id/resultTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="" 
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:paddingTop="100dip"
+            android:minWidth="75dip"/>
+    
+
+</LinearLayout>
