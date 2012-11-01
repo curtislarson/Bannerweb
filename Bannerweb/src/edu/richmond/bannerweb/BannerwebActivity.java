@@ -46,7 +46,8 @@ public class BannerwebActivity extends Activity implements OnClickListener {
         if(success)
         {
         	String balance = nm.getMealPlanBalance();
-        	tv.setText(balance);
+        	String spiderBalance = nm.getSpiderDollarBalance();
+        	tv.setText("Meal Swipes: " + nm.getMealPlanSwipes() + "\n" + "Dining Dollars: $" + balance + "\n" + "Spider Dollars: $" + spiderBalance);
         }
         else
         {

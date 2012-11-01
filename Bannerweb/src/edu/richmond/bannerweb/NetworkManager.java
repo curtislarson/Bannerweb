@@ -86,15 +86,39 @@ public class NetworkManager {
 	{
 		String finder = "The current balance of dining dollars on your meal plan is :  \n<b>$       ";
 		String source = getMealPlanPage();
+		return scrape(finder,"</b>",source);
+	}
+	
+	public String getSpiderDollarBalance()
+	{
+		String source = getSpiderDollarPage();
+		String finder = "Your current SpiderCard balance  :  \n<b>$";
+		return scrape(finder,"</b>",source);
+	}
+	
+	public String getMealPlanSwipes()
+	{
+		String source = getMealPlanPage();
+		String finder = "The current number of meal punches remaining for the week or semester based on your meal plan type is :  \n<b>";
+		return scrape(finder,"</b>",source);
+	}
+	
+	private String scrape(String finder, String ender, String source)
+	{
 		int startIndex = source.indexOf(finder) + finder.length();
-		int endIndex = source.indexOf("</b>",startIndex);
-		return source.substring(startIndex, endIndex);
+		int endIndex = source.indexOf(ender,startIndex);
+		return source.substring(startIndex, endIndex).trim();
 	}
 	
 	private String getMealPlanPage()
 	{
 		String page = this.get("https://bannerweb.richmond.edu/bannerweb/hwgxspdr.display_dining_dollars");
 		return page;
+	}
+	
+	private String getSpiderDollarPage()
+	{
+		return this.get("https://bannerweb.richmond.edu/bannerweb/hwgxspdr.spidercard_main");
 	}
 	
 	/*
